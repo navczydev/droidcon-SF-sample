@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">droidcon-SF</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="you_have_some_un_saved_information">You have some un-saved information</string>
+    <string name="ok">Ok</string>
+    <string name="launch_second_activity">Launch second activity</string>
+    <string name="flip_the_back_behaviour">Flip the back behaviour</string>
+    <string name="predictive_back_gesture_demo">Predictive back gesture - Demo</string>
+    <string name="hello_from_sanfrancisco">Hello from SanFrancisco</string>
+    <string name="open_bottom_sheet">Open bottom sheet\n</string>
+</resources>
