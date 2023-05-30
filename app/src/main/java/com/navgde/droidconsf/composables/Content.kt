@@ -7,12 +7,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
-import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -22,7 +17,6 @@ import com.navgde.droidconsf.R
 /**
  * @author Nav Singh
  */
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Content(
     isBackEnable: Boolean,
@@ -31,8 +25,6 @@ fun Content(
     startAnotherActivity: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var openBottomSheet by rememberSaveable { mutableStateOf(false) }
-    val scaffoldState = rememberBottomSheetScaffoldState()
     MaterialTheme {
         BackHandler(enabled = isBackEnable) {
             onBackPressed()
@@ -48,12 +40,6 @@ fun Content(
             OutlinedButton(onClick = onClickAction) {
                 Text(stringResource(R.string.flip_the_back_behaviour))
             }
-            OutlinedButton(onClick = { openBottomSheet = !openBottomSheet }) {
-                Text(stringResource(R.string.open_bottom_sheet))
-            }
-        }
-        if(openBottomSheet) {
-            BottomSheetSample(bottomSheetScaffoldState = scaffoldState)
         }
     }
 }
