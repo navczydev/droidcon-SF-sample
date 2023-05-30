@@ -8,4 +8,7 @@
     <string name="predictive_back_gesture_demo">Predictive back gesture - Demo</string>
     <string name="hello_from_sanfrancisco">Hello from SanFrancisco</string>
     <string name="open_bottom_sheet">Open bottom sheet\n</string>
+    <string name="download_file">Download File</string>
+    <string name="share">Share</string>
+    <string name="upload_to_google_drive">Upload To Google Drive</string>
 </resources>
