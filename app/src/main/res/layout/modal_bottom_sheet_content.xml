@@ -4,12 +4,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/download"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/padding8dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,7 +27,5 @@
             android:layout_gravity="center_vertical"
             android:padding="@dimen/padding8dp"
             android:text="@string/upload_to_google_drive" />
-
-    </LinearLayout>
 
 </LinearLayout>
