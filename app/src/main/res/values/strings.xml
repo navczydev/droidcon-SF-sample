@@ -5,10 +5,18 @@
     <string name="ok">Ok</string>
     <string name="launch_second_activity">Launch second activity</string>
     <string name="flip_the_back_behaviour">Flip the back behaviour</string>
-    <string name="predictive_back_gesture_demo">Predictive back gesture - Demo</string>
+    <string name="whats_up_with_back_demo">What\'s up with back - Demo</string>
     <string name="hello_from_sanfrancisco">Hello from SanFrancisco</string>
-    <string name="open_bottom_sheet">Open bottom sheet\n</string>
-    <string name="download_file">Download File</string>
-    <string name="share">Share</string>
-    <string name="upload_to_google_drive">Upload To Google Drive</string>
+    <string name="open_bottom_sheet">BottomSheet demo</string>
+    <string name="dc_berlin">Droidcon Berlin 🇩🇪</string>
+    <string name="dc_nyc">Droidcon New York 🇺🇸</string>
+    <string name="dc_london">Droidcon London 🇬🇧</string>
+    <string name="future_droidcons">Future events</string>
+    <string name="side_sheet_label">SideSheet demo</string>
+    <string name="content_description_close_sidesheet">Close SideSheet</string>
+    <string name="content_description_droidcon_logo">Droidcon logo</string>
+    <string name="content_description_android_droidcon_logo">Android droidcon logo</string>
+    <string name="events">Events</string>
+    <string name="updates">Updates</string>
+    <string name="alerts">Alerts</string>
 </resources>
