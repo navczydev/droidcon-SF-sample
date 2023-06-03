@@ -13,7 +13,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.navgde.droidconsf.R
 import com.navgde.droidconsf.composables.TopComposable
 import com.navgde.droidconsf.databinding.ActivityMainBinding
-import com.navgde.droidconsf.fragments.ModalBottomSheet
 import com.navgde.droidconsf.viewmodels.MainActivityViewModel
 
 /**
@@ -62,9 +61,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }*/
-
-        val modalBottomSheet = ModalBottomSheet()
-        modalBottomSheet.show(supportFragmentManager, ModalBottomSheet.TAG)
     }
 
 
