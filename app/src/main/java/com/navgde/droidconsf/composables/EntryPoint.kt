@@ -15,7 +15,7 @@ import com.navgde.droidconsf.activities.SecondActivity
  * @author Nav Singh
  */
 @Composable
-fun TopComposable() {
+fun TopComposable(showSideSheet: () -> Unit = {}) {
     val context = LocalContext.current
     var isBackEnable by remember {
         mutableStateOf(false)
@@ -29,6 +29,8 @@ fun TopComposable() {
         shouldShowAlert = !shouldShowAlert
     }, startAnotherActivity = {
         context.startActivity(Intent(context, SecondActivity::class.java))
+    }, openSideSheet = {
+        showSideSheet()
     })
 
     AnimatedVisibility(shouldShowAlert) {
