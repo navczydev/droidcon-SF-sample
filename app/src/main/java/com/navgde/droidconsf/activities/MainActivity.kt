@@ -13,7 +13,9 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.navgde.droidconsf.R
 import com.navgde.droidconsf.composables.TopComposable
 import com.navgde.droidconsf.databinding.ActivityMainBinding
+import com.navgde.droidconsf.databinding.SideSheetContentBinding
 import com.navgde.droidconsf.fragments.ModalBottomSheet
+import com.navgde.droidconsf.fragments.SideSheet
 import com.navgde.droidconsf.viewmodels.MainActivityViewModel
 
 /**
@@ -30,7 +32,9 @@ class MainActivity : AppCompatActivity() {
             it.cv.apply {
                 setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
                 setContent {
-                    TopComposable()
+                    TopComposable {
+                        SideSheet.showSideSheet(this@MainActivity, SideSheetContentBinding.inflate(layoutInflater))
+                    }
                 }
             }
         }
@@ -87,7 +91,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-
+        // check if there are any enabled callbacks available or not
         onBackPressedDispatcher.hasEnabledCallbacks()
     }
 
@@ -111,16 +115,17 @@ class MainActivity : AppCompatActivity() {
     /**
      * handle backPress at the dialog level
      */
-    private fun dialogBackPressCallback() {
+    private fun dialogWithBackPressedCallback() {
         val dialog = MaterialAlertDialogBuilder(this).setTitle("Hello")
             .setPositiveButton(
                 getString(R.string.ok)
             ) { dialog, which -> dialog.dismiss() }.create().apply {
                 this.onBackPressedDispatcher.addCallback(this) {
                     Toast.makeText(context, "Dialog handling backPress", Toast.LENGTH_SHORT).show()
+                    dismiss()
+                    // remove this callback
                     remove()
                 }
-                //setCancelable(true)
             }
         dialog.show()
     }
@@ -130,5 +135,3 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-
-
