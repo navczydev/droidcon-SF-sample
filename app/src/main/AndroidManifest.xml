@@ -20,7 +20,7 @@
         -->
         <activity
             android:name="com.navgde.droidconsf.activities.MainActivity"
-            android:enableOnBackInvokedCallback="false"
+            android:enableOnBackInvokedCallback="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
