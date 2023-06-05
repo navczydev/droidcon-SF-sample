@@ -39,9 +39,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         // starting from AppCompat 1.6.0-alpha05 (backward compatible)
-        //  addLifecycleAwareBackPressCallback()
-        //  addLifecycleUnAwareBackPressCallback()
-        //  dialogBackPressCallback()
+        // addLifecycleAwareBackPressCallback()
+        // addLifecycleUnAwareBackPressCallback()
+        // dialogBackPressCallback()
 
         // TODO- PLATFORM API
         /*if (BuildCompat.isAtLeastT()) {
@@ -75,8 +75,8 @@ class MainActivity : AppCompatActivity() {
     // Always called
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
+        // Need to call this to process the callbacks added to the onBackDispatcher
         super.onBackPressed()
-        // need to call this to process the callbacks added to the onBackDispatcher
         Log.d(TAG, "onBackPressed: MAIN_ACTIVITY")
     }
 
@@ -116,18 +116,20 @@ class MainActivity : AppCompatActivity() {
      * handle backPress at the dialog level
      */
     private fun dialogWithBackPressedCallback() {
-        val dialog = MaterialAlertDialogBuilder(this).setTitle("Hello")
+        MaterialAlertDialogBuilder(this)
+            .setTitle(getString(R.string.alert_dialog_title))
             .setPositiveButton(
                 getString(R.string.ok)
-            ) { dialog, which -> dialog.dismiss() }.create().apply {
-                this.onBackPressedDispatcher.addCallback(this) {
+            ) { dialog, _ -> dialog.dismiss() }
+            .create()
+            .apply {
+                onBackPressedDispatcher.addCallback(this) {
                     Toast.makeText(context, "Dialog handling backPress", Toast.LENGTH_SHORT).show()
                     dismiss()
                     // remove this callback
                     remove()
                 }
-            }
-        dialog.show()
+            }.show()
     }
 
     companion object {

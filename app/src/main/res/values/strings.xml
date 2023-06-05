@@ -20,4 +20,5 @@
     <string name="updates">Updates</string>
     <string name="alerts">Alerts</string>
     <string name="droidconsf_23">DroidConSF-23</string>
+    <string name="alert_dialog_title">Hello 👋</string>
 </resources>

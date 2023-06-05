@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.navgde.droidconsf.composables.BottomSheetContent
@@ -30,17 +31,16 @@ class ModalBottomSheet : BottomSheetDialogFragment() {
             }
         }
         // custom back handling in fragment
-        /*     requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-                 override fun handleOnBackPressed() {
-                     TODO("Not yet implemented")
+        /*    val backPressedCallback = object : OnBackPressedCallback(enabled = true) {
 
-                 }
+                override fun handleOnBackPressed() {
+                    //...  back logic
+                    remove()
+                }
 
-             })
+            }
+            requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, backPressedCallback)*/
 
-             requireActivity().onBackPressedDispatcher.addCallback {
-
-             }*/
     }
 
     companion object {
